@@ -287,7 +287,7 @@ class MarketMaker( object ):
             
             min_order_size_btc = (MIN_ORDER_SIZE * CONTRACT_SIZE) / spot
             print(min_order_size_btc) #0.0006833471711135484 0.08546200188472201
-            qtybtc  = bal_btc * 125 / 5
+            qtybtc  = bal_btc * 125 / 25
 
             nbids   = min( math.trunc( pos_lim_long  / qtybtc ), MAX_LAYERS )
             nasks   = min( math.trunc( pos_lim_short / qtybtc ), MAX_LAYERS )
