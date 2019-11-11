@@ -23,7 +23,7 @@ binance_futures = new ccxt.binance(
 var btcstart = 53.21020949
 var btcs = []
 var ids = []
-var vol = 58.88
+var vol = 0
 setInterval(async function(){
 trades = await binance_futures.fapiPrivateGetUserTrades({'symbol':'BTCUSDT', 'limit': 1000})
 for (var t in trades){

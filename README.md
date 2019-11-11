@@ -50,6 +50,9 @@ binSecret is your api secret...
 https://hackernoon.com/porting-a-bot-to-binance-futures-market-making-competition-6v6a31qh
 
 
+Track our bot's delta in real-time (after the test bot's run is complete) here: http://coindexbot.duckdns.org
+
+
 Original README.md as follows:
 
 
