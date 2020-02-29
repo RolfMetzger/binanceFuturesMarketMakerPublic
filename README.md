@@ -7,6 +7,42 @@ Support this open-source project organically, without subscription! Sign up to B
 Support this open-source project! $1 or $5 a month from a crowd adds up! https://github.com/sponsors/dunncreativess
 
 
+https://imgur.com/FxgIqrY
+
+
+EDIT: GitHub repo has been made private. Subscribe to GitHub Sponsors $100 tier for access!
+
+
+EDIT: Opensourced again!
+
+
+Binance WAS running a competition as we speak for 50k BNB — 40k for spot/margin, 10k for futures — if you trade more than 1 BTC in notional value in either bucket! Be prepared for the next competition with my private market making repository for Binance futures and margin! IOTX Binance trading competition just concluded with another $90 000 to be won!
+
+
+https://imgur.com/b97oLP9
+
+
+https://drive.google.com/file/d/198dAxfEfmPxxe696t7wnsN3ijBLods4h/view?usp=sharing
+
+
+Lucky for me I already have a Binance futures market maker — and with a wee bit of edits to the code, it ran fine on margin 5x, too! I ran the futures on 100x and orders of 0.002 BTC and it won the futures contest in ~1hr.
+
+
+Check g543 for the total. Woo!
+
+
+I was +0.5% for most of my bot run on futures, ended at -1% on equity.
+
+
+I was down about 21% — of my whopping $46 — on margin.
+
+
+https://imgur.com/undefined
+
+
+Win Binance trading competitions! I won my share of 10k BNB for futures trading and 40k BNB for spot/margin trading 1+ BTC in <3 hours in this recent Binance giveaway: https://www.binance.com/en/support/articles/360040070651
+
+
 Setup:
 
 
