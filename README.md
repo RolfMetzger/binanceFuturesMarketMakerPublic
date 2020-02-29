@@ -1,6 +1,9 @@
 Binance Futures Market Maker, by Jarett Dunn
 
 
+Support this open-source project organically, without subscription! Sign up to Binance here using this referral link: https://www.binance.com/en/register?ref=VZJQV7PR and for futures here: https://www.binance.com/en/futures/ref/neomenia
+
+
 Support this open-source project! $1 or $5 a month from a crowd adds up! https://github.com/sponsors/dunncreativess
 
 
