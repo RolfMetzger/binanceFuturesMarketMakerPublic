@@ -7,7 +7,7 @@ from time           import sleep
 from utils          import ( get_logger, lag, print_dict, print_dict_of_dicts, sort_by_key,
                              ticksize_ceil, ticksize_floor, ticksize_round )
 import json
-
+import random, string
 import copy as cp
 import argparse, logging, math, os, pathlib, sys, time, traceback
 import ccxt
@@ -136,6 +136,11 @@ class MarketMaker( object ):
         #print(dir(self.client))           
 
     
+
+    def randomword(self, length):
+       letters = string.ascii_lowercase
+       return ''.join(random.choice(letters) for i in range(length))
+
     def get_bbo( self, contract ): # Get best b/o excluding own orders
         
         # Get orderbook
@@ -365,7 +370,7 @@ class MarketMaker( object ):
                             print(e)
                     else:
                         try:
-                            self.client.createOrder(  fut, "Limit", 'buy', qty, prc)
+                            self.client.createOrder(  fut, "Limit", 'buy', qty, prc, {"newClientOrderId": "x-GYswxDoF-" + self.randomword(20)})
                         except (SystemExit, KeyboardInterrupt):
                             raise
                         except Exception as e:
@@ -396,7 +401,7 @@ class MarketMaker( object ):
 
                     else:
                         try:
-                            self.client.createOrder(  fut, "Limit", 'sell', qty, prc)
+                            self.client.createOrder(  fut, "Limit", 'sell', qty, prc, {"newClientOrderId": "x-GYswxDoF-" + self.randomword(20)})
                         except (SystemExit, KeyboardInterrupt):
                             raise
                         except Exception as e:
