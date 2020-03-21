@@ -1,5 +1,8 @@
 # This code is for sample purposes only, comes as is and with no warranty or guarantee of performance
 
+pair = 'BTC/USDT'
+binApi = "API"
+binSecret = "SECRET"
 from collections    import OrderedDict
 from datetime       import datetime
 from os.path        import getmtime
@@ -78,13 +81,8 @@ WAVELEN_OUT         = 15        # time in seconds between output to terminal
 WAVELEN_TS          = 15        # time in seconds between time series update
 VOL_PRIOR           = 100       # vol estimation starting level in percentage pts
 
-with open('config.json') as json_file:
-    data = json.load(json_file)
-    RISK_CHARGE_VOL = data['RISK_CHARGE_VOL']['current']
-    EWMA_WGT_COV = data['EWMA_WGT_COV']['current']
-    VOL_PRIOR = data['VOL_PRIOR']['current']
-    binApi = data['binApi']
-    binSecret = data['binSecret']
+
+    
 
     #DECAY_POS_LIM = data['RISK_CHARGE_VOL']['current']
     
@@ -199,8 +197,8 @@ class MarketMaker( object ):
 
     
     def get_spot( self ):
-        #print(self.client2.fetchTicker( 'BTC/USDT' )['bid'])
-        return self.client2.fetchTicker( 'BTC/USDT' )['bid']
+        #print(self.client2.fetchTicker( pair )['bid'])
+        return self.client2.fetchTicker( pair )['bid']
 
     
     def get_precision( self, contract ):
@@ -415,18 +413,18 @@ class MarketMaker( object ):
                 cancel_oids += [ o['info']['side']['orderId'] for o in ask_ords[ nasks : ]]
             for oid in cancel_oids:
                 try:
-                    self.client.cancelOrder( oid , 'BTC/USDT' )
+                    self.client.cancelOrder( oid , pair )
                 except:
                     self.logger.warn( 'Order cancellations failed: %s' % oid )
                                         
     def cancelall(self):
-        ords        = self.client.fetchOpenOrders( 'BTC/USDT' )
+        ords        = self.client.fetchOpenOrders( pair )
         for order in ords:
             #print(order)
             oid = order ['info'] ['orderId']
            # print(order)
             try:
-                self.client.cancelOrder( oid , 'BTC/USDT' )
+                self.client.cancelOrder( oid , pair )
             except Exception as e:
                 print(e)
     def restart( self ):        
@@ -560,8 +558,8 @@ class MarketMaker( object ):
         #print(positions)
         
         for pos in positions:
-            if 'BTC/USDT' in self.futures:
-                self.positions[ 'BTC/USDT'] = pos
+            if pair in self.futures:
+                self.positions[ pair] = pos
         
     
     def update_timeseries( self ):

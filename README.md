@@ -1,6 +1,26 @@
 Binance Futures Market Maker, by Jarett Dunn
 
 
+# Publicity
+
+
+I won the recent BNB giveaway for spot + futures using this market maker. I traded more than 2 BTC in <2 hours with a balance of about $40. I even turned a 1.5% returns on equity trading BTCUSD futures.
+
+
+https://medium.com/@jarettdunn/binance-hacked-two-trading-competitions-my-share-of-40k-and-10k-bnb-prize-in-jare-cloud-c9dca20f0ac6
+
+
+
+# Edits
+
+
+At the top of the market_maker.py file is a pair setting. If you copy this file, you can run other pairs, like BCH/USDT. Save this file something different and run python market_maker.py for your BTC/USDT and for your other file for other coins.
+
+
+To enter more orders more often, reduce RISK_CHARGE_VOL. When it's higher, it's anticipating more volatility in the market and the difference between order entries will be more distance, allowing you to profit from more of the higher differences in assets being considered.
+
+
+
 Support this open-source project organically, without subscription! Sign up to Binance here using this referral link: https://www.binance.com/en/register?ref=VZJQV7PR and for futures here: https://www.binance.com/en/futures/ref/neomenia
 
 
@@ -49,27 +69,6 @@ Setup:
 1. Clone or download repo
 2. cd into dir
 3. python3 setup.py install
-4. create a file called config.json that looks like this:
-
-
-{"binApi": "",
-	"binSecret": "",
-	"RISK_CHARGE_VOL": {"current": 0.05, "max": 5, "step": 0.05, "min": 0.05}, "VOL_PRIOR": {"current": 10, "max": 500, "step": 10, "min": 10}, "EWMA_WGT_COV": {"current": 0.05, "max": 4, "step": 0.05, "min": 0.05}}
-
-
-The 'current' values here are your input variables to optimize the bot.
-
-
-The first variable I would prioritize is RISK_CHARGE_VOL which dictates how wide markets should be in response to volatility (in whatever manner it is projected - in the case of the sample code, an EWMA process).
-
-
-
-EWMA_WGT_COV would be the next one I think because it directly affects the volatility forecast and it is generally not clear how "fast-moving" the EWMA vol forecast should be.
-
-
-
-After that, VOL_PRIOR because that sets the starting point for your vol estimation. You may want to adjust the code so that instead of VOL_PRIOR being a constant (essentially), it is determined by e.g. some historical vol estimate. VOL_PRIOR only really matters that much when the bot has been started or restarted.
-
 
 
 For our competition run, Coindex Labs is optimizing these input variables using our proprietary AI. Note that the defaults here will probably lose funds, they're not optimized or recommended.
